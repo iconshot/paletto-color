@@ -1,0 +1,19 @@
+{
+  "name": "@paletto/color",
+  "version": "1.0.0",
+  "description": "Paletto Color",
+  "homepage": "https://paletto.dev",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iconshot/paletto-color.git"
+  },
+  "main": "index.js",
+  "keywords": [
+    "paletto",
+    "color"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "color-convert": "^2.0.1"
+  }
+}
