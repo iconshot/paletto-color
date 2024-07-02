@@ -11,7 +11,9 @@ class Color {
   }
 
   hex(value) {
-    return ColorConvert.hsv.hex(this.hue, this.saturation, value);
+    const hex = ColorConvert.hsv.hex(this.hue, this.saturation, value);
+
+    return `#${hex}`;
   }
 
   // source: http://www.procato.com/rgb+index/
