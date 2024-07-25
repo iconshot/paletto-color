@@ -1,17 +1,17 @@
-const ColorConvert = require("color-convert");
+import ColorConvert from "color-convert";
 
-class Color {
-  constructor(hue, saturation = 100) {
-    this.hue = hue;
-    this.saturation = saturation;
-  }
+export class Color {
+  constructor(
+    private readonly hue: number,
+    private readonly saturation: number = 100
+  ) {}
 
-  rgb(value) {
+  rgb(value: number): [number, number, number] {
     return ColorConvert.hsv.rgb(this.hue, this.saturation, value);
   }
 
-  hex(value) {
-    const hex = ColorConvert.hsv.hex(this.hue, this.saturation, value);
+  hex(value: number): string {
+    const hex: string = ColorConvert.hsv.hex(this.hue, this.saturation, value);
 
     return `#${hex}`;
   }
@@ -69,5 +69,3 @@ class Color {
     static AMARANTH = 352.5;
   };
 }
-
-module.exports = Color;
