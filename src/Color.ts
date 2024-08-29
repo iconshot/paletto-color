@@ -19,10 +19,18 @@ export class Color {
   }
 
   rgb(value: number): [number, number, number] {
+    if (value < 0 || value > 100) {
+      throw new Error("Color value must be between 0 and 100.");
+    }
+
     return ColorConvert.hsv.rgb(this.hue, this.saturation, value);
   }
 
   hex(value: number): string {
+    if (value < 0 || value > 100) {
+      throw new Error("Color value must be between 0 and 100.");
+    }
+
     const hex: string = ColorConvert.hsv.hex(this.hue, this.saturation, value);
 
     return `#${hex}`;
