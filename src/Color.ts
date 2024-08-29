@@ -14,11 +14,11 @@ export class Color {
     }
 
     if (hue === 360) {
-      hue = 0;
+      this.hue = 0;
     }
   }
 
-  rgb(value: number): [number, number, number] {
+  public rgb(value: number): [number, number, number] {
     if (value < 0 || value > 100) {
       throw new Error("Color value must be between 0 and 100.");
     }
@@ -26,7 +26,7 @@ export class Color {
     return ColorConvert.hsv.rgb(this.hue, this.saturation, value);
   }
 
-  hex(value: number): string {
+  public hex(value: number): string {
     if (value < 0 || value > 100) {
       throw new Error("Color value must be between 0 and 100.");
     }
