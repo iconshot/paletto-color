@@ -4,7 +4,19 @@ export class Color {
   constructor(
     private readonly hue: number,
     private readonly saturation: number = 100
-  ) {}
+  ) {
+    if (hue < 0 || hue > 360) {
+      throw new Error("Color hue must be between 0 and 360.");
+    }
+
+    if (saturation < 0 || saturation > 100) {
+      throw new Error("Color saturation must be between 0 and 100.");
+    }
+
+    if (hue === 360) {
+      hue = 0;
+    }
+  }
 
   rgb(value: number): [number, number, number] {
     return ColorConvert.hsv.rgb(this.hue, this.saturation, value);
