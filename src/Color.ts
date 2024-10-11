@@ -36,6 +36,10 @@ export class Color {
     return `#${hex}`;
   }
 
+  public static get blank(): Color {
+    return new Color(0, 0);
+  }
+
   // source: http://www.procato.com/rgb+index/
 
   public static Hues = class Hues {
